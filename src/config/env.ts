@@ -1,3 +1,5 @@
+import dotenv from "dotenv";
+dotenv.config();
 type EnvConfig = {
   PORT: number;
   NODE_ENV: "development" | "production";

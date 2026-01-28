@@ -1,8 +1,8 @@
-import dotenv from "dotenv";
 import app from "./app";
 import { env } from "./config/env";
-dotenv.config();
 
 app.listen(env.PORT, () => {
-  console.log(`Server is running http://localhost:${env.NODE_ENV}`);
+  console.log(
+    `Server is running ${env.NODE_ENV} mode on http://localhost:${env.PORT}`,
+  );
 });

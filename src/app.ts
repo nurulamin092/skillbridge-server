@@ -1,5 +1,6 @@
 import express, { Application, Request, Response } from "express";
 import cors from "cors";
+import { errorHandler } from "./middlewares/error-handler";
 
 const app: Application = express();
 
@@ -12,5 +13,11 @@ app.get("/health", (req: Request, res: Response) => {
     message: "skill bridge app is running!..",
   });
 });
+
+app.get("/error-test", () => {
+  throw new Error("Test Error");
+});
+
+app.use(errorHandler);
 
 export default app;
